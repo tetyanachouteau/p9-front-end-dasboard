@@ -13,6 +13,28 @@ function Dashboard() {
     //let description= { description } 
         return (
             <div>
+                Bonjour Thomas
+                Félicitation ! Vous avez explosé vos objectifs hier 👏
+
+                Activité quotidienne
+
+                - Poids (kg)
+                - Calories brûlées (kCal)
+
+
+                Copiryght, SportSee 2020
+1930kCal
+Calories
+
+155g
+Proteines
+
+290g
+Glucides
+
+50g
+Lipides
+
                 <Header />
                 SportSee Start
             </div>

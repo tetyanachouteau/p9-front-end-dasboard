@@ -11,8 +11,18 @@ function Navigation() {
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/dashboard" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
-                        Dashboard
+                    <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
+                        Profil
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
+                        Réglages
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>
+                        Communauté
                     </NavLink>
                 </li>
             </ul>

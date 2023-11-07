@@ -1,0 +1,13 @@
+.layout {
+    margin: 0 auto;
+    font-family: 'Montserrat';
+    flex-direction: column;
+    display: flex;
+}
+
+.layout main,
+header {
+    max-width: 1025px;
+    margin: 50px auto;
+    padding: 0 10px;
+}
