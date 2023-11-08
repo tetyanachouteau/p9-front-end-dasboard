@@ -9,9 +9,9 @@ function Layout() {
         <div className={styles.layout}>
             <Header />
             <div className={styles.contentContainer}>
-                <div className={styles.siderleft}>
+                <aside className={styles.siderleft}>
                     <SiderLeft />
-                </div>
+                </aside>
                 <main>
                     <Outlet />
                 </main>

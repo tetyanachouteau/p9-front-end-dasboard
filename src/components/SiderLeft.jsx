@@ -6,7 +6,6 @@ function SiderLeft() {
 
     return (
         <siderleft className={styles.siderleft}>
-            <div className={styles.text}>Copiryght, SportSee 2020</div>
             <div className={styles.icons}>
                 <Link to="/page1">
                     <img src="/images/icon1.png" alt="Icon 1" />
@@ -21,6 +20,7 @@ function SiderLeft() {
                     <img src="/images/icon4.png" alt="Icon 4" />
                 </Link>
             </div>
+            <div className={styles.text}>Copyright, SportSee 2020</div>
         </siderleft >
     );
 }
