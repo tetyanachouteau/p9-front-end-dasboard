@@ -1,23 +1,20 @@
 .siderleft {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+
     background-color: #000000;
     color: #fff;
-    width: 100%;
-    height: 209px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0;
-    position: relative;
-    bottom: 0px;
-}
 
-.siderleft img {
-    width: 122px;
-    height: 39.44px;
-}
 
-.siderleft p {
-    height: 46px;
-    margin-bottom: 0;
+    icons {
+        width: 122px;
+        height: 39.44px;
+    }
+
+    text {
+        height: 46px;
+        margin-bottom: 0;
+    }
 }
