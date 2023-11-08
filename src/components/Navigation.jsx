@@ -1,9 +1,12 @@
 import styles from "./Navigation.module.css"
 import { NavLink } from 'react-router-dom';
+import React from 'react';
 
 function Navigation() {
     return (
+
         <div className={styles.navigation}>
+
             <ul>
                 <li>
                     <NavLink to="/" className={({ isActive }) => (isActive ? styles.activeLink : "")}>

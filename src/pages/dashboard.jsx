@@ -1,10 +1,12 @@
 //import { useParams, Navigate } from "react-router-dom";
 
 //import data from '../data/data.js';
-import Header from "../components/Header";
+
 //import Tag from "../components/Tag";
 //import Rating from "../components/Rating";
 //import styles from "./dashboard.module.css"
+import React from 'react';
+import HeaderDashboard from '../components/HeaderDashboard';
 
 
 function Dashboard() {
@@ -13,8 +15,8 @@ function Dashboard() {
     //let description= { description } 
         return (
             <div>
-                Bonjour Thomas
-                Félicitation ! Vous avez explosé vos objectifs hier 👏
+                <HeaderDashboard />
+                
 
                 Activité quotidienne
 
@@ -22,7 +24,7 @@ function Dashboard() {
                 - Calories brûlées (kCal)
 
 
-                Copiryght, SportSee 2020
+                
 1930kCal
 Calories
 
@@ -35,7 +37,7 @@ Glucides
 50g
 Lipides
 
-                <Header />
+                
                 SportSee Start
             </div>
         );

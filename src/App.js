@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import React from 'react';
 
 import Accueil from "./pages/accueil";
 import Dashboard from "./pages/dashboard";
