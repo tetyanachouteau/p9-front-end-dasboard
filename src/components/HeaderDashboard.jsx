@@ -2,17 +2,15 @@ import styles from "./HeaderDashboard.module.css"
 //import Navigation from './Navigation';
 import React from 'react';
 
-function Header() {
-
+function HeaderDashboard() {
     return (
-        <header className={styles.header}>
-            Bonjour Thomas
-            Félicitation ! Vous avez explosé vos objectifs hier <span role="img" aria-label="coucou">👏</span>
-        </header>
-
-
+        <headerdashboard className={styles.headerdashbo}>
+            <div>Bonjour Thomas</div>
+            <div>Félicitation ! Vous avez explosé vos objectifs hier
+                <span role="img" aria-label="coucou">👏</span>
+            </div>
+        </headerdashboard>
     );
 }
 
-
-export default Header;
+export default HeaderDashboard;

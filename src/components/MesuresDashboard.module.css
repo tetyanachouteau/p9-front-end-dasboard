@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Modifier la direction en colonne */
+    align-items: right;
+    text-align: right;
+}
+
+.measure {
+    margin: 10px;
+}
+
+img {
+    width: 50px;
+    /* Ajustez la taille de l'icône selon vos besoins */
+}
+
+.value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.label {
+    font-size: 14px;
+    color: #555;
+}
