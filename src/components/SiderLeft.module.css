@@ -1,20 +1,20 @@
 .siderleft {
     display: flex;
     flex-direction: column;
-    align-items: left;
-    text-align: left;
-
     background-color: #000000;
+    height: 100%;
+}
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text {
+    transform: rotate(-90deg);
     color: #fff;
-
-
-    icons {
-        width: 122px;
-        height: 39.44px;
-    }
-
-    text {
-        height: 46px;
-        margin-bottom: 0;
-    }
+    position: absolute;
+    bottom: 102px;
+    white-space: nowrap;
 }
