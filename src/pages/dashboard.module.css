@@ -23,16 +23,65 @@
     /* Occupe tout l'espace disponible en hauteur */
 }
 
+/* dashboard.module.css */
 .group-left {
     display: flex;
     flex-direction: column;
-    width: 75%;
-    /* Réserve 75% de l'espace pour les composants de gauche */
 }
+
+.poids-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.poids1 {
+    /* Styles pour Poids1 en haut en large */
+}
+
+.poids-text {
+    color: #333;
+    /* Couleur du texte */
+    font-size: 14px;
+    /* Taille de police du texte */
+    margin-top: 10px;
+    /* Marge au-dessus du texte */
+}
+
+.group-bottom {
+    display: flex;
+    flex-direction: row;
+    /* Pour placer les composants de gauche à droite */
+}
+
+.objectifs-container,
+radar-container,
+kpi-container {
+    flex: 1;
+    /* Pour répartir l'espace équitablement entre les composants */
+}
+
+.objectifs3,
+radar2,
+kpi4 {
+    /* Styles pour chaque composant (Objectifs3, Radar2, KPI4) */
+}
+
+.objectifs-text,
+radar-text,
+kpi-text {
+    color: #333;
+    /* Couleur du texte */
+    font-size: 14px;
+    /* Taille de police du texte */
+    text-align: center;
+    /* Centrer le texte horizontalement */
+    margin-top: 10px;
+    /* Marge au-dessus du texte */
+}
+
 
 .dashboard-right {
     flex: 1;
     /* Occupe tout l'espace disponible à droite pour MesuresDashboard */
 }
-
-/* Ajoutez d'autres styles si nécessaire pour chaque composant */

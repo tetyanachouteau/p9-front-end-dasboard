@@ -16,11 +16,23 @@ function Dashboard() {
             </div>
             <div className={styles['dashboard-middle']}>
                 <div className={styles['group-left']}>
-                    <Poids1 />
-                    <Objectifs3 />
-                    <Radar2 />
-                    <KPI4 />
+                    <div className={styles['poids-container']}>
+                        <Poids1 className={styles['poids1']} />    
+                    </div>
+                    <div className={styles['group-bottom']}>
+                        <div className={styles['objectifs-container']}>
+                            <Objectifs3 className={styles['objectifs3']} />                 
+                        </div>
+                        <div className={styles['radar-container']}>
+                            <Radar2 className={styles['radar2']} />
+                        </div>
+                        <div className={styles['kpi-container']}>
+                            <KPI4 className={styles['kpi4']} />
+                        </div>
+                    </div>
                 </div>
+
+
                 <div className={styles['dashboard-right']}>
                     <MesuresDashboard />
                 </div>
