@@ -1,33 +1,27 @@
-  /* Style de la barre de navigation */
-  .navigation {
-    margin: 15px; /* Marge de 15 pixels autour de l'élément */
-  }
-  
-  /* Style de la liste non ordonnée à l'intérieur de la barre de navigation */
-  .navigation ul {
-    list-style: none; /* Supprime les puces de liste */
-    padding: 0; /* Supprime le rembourrage intérieur */
-    margin: 0; /* Supprime les marges extérieures */
-    display: flex; /* Utilise la mise en page Flexbox */
-    gap: 57px; /* Espace de 57 pixels entre les éléments de la liste */
-  }
-  
-  /* Style des liens à l'intérieur de la barre de navigation */
-  .navigation a {
-    font-family: 'Montserrat'; /* Utilise la police Montserrat */
-    font-size: 24px; /* Taille de police de 24 pixels */
-    color: #FF6060; /* Couleur du texte en rouge (#FF6060) */
-    line-height: 34.22px; /* Hauteur de ligne de 34.22 pixels */
-    text-decoration: none; /* Supprime la décoration des liens */
-  }
-  
-  /* Style pour les éléments de liste à l'intérieur de la classe "navigation" */
-  .navigation ul li {
-    display: inline; /* Affiche les éléments de liste en ligne (côte à côte) */
-    white-space: nowrap; /* Empêche le renvoi à la ligne des éléments longs */
-  }
-  
-  /* Style pour les liens actifs (soulignés) */
-  .navigation .activeLink {
-    text-decoration: underline; /* Souligne les liens actifs */
-  }
+.navigation {
+  width: 994px;
+  height: 24px;
+  margin-top: 36px;
+  margin-left: 355px;
+}
+
+.navigation ul {
+  list-style: none;
+  /* Supprime les puces de liste */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 57px;
+}
+
+.navigation ul li {
+  display: inline;
+  white-space: nowrap;
+  font-family: 'Roboto';
+}
+
+.navigation a {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: white;
+}
