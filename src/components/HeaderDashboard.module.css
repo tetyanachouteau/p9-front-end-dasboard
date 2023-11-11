@@ -6,7 +6,8 @@
 
 .headerdashboard .text {
     font-size: 48px;  
-    font-weight: 500;  
+    font-weight: 500; 
+    margin: 0; 
 }
 
 .headerdashboard .red {

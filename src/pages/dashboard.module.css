@@ -3,12 +3,8 @@
     display: flex;
     flex-direction: column;
     /* Pour empiler les div verticalement */
-    padding: 20px;
+    padding: 30px 100px;
     /* Ajout de la marge pour un meilleur espacement */
-}
-
-.dashboard-top {
-    /* Styles pour le composant HeaderDashboard tout en haut et seul */
 }
 
 .dashboard-middle {

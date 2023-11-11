@@ -11,9 +11,7 @@ import styles from './dashboard.module.css';
 function Dashboard() {
     return (
         <div className={styles['dashboard-container']}>
-            <div className={styles['dashboard-top']}>
-                <HeaderDashboard />
-            </div>
+            <HeaderDashboard />
             <div className={styles['dashboard-middle']}>
                 <div className={styles['group-left']}>
                     <div className={styles['poids-container']}>
