@@ -4,12 +4,12 @@ import React from 'react';
 
 function HeaderDashboard() {
     return (
-        <headerdashboard className={styles.headerdashbo}>
-            <div>Bonjour Thomas</div>
-            <div>Félicitation ! Vous avez explosé vos objectifs hier
+        <div className={styles.headerdashboard}>
+            <p className={styles.text}>Bonjour <span className={styles.red}>Thomas</span></p>
+            <p>Félicitation ! Vous avez explosé vos objectifs hier
                 <span role="img" aria-label="coucou">👏</span>
-            </div>
-        </headerdashboard>
+            </p>
+        </div>
     );
 }
 

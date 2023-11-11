@@ -1,14 +1,14 @@
 .headerdashboard {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 0;
-    width: 100%;
+    flex-direction: column;
+    color: #000000;
 }
 
-.headerdashboard img {
-    width: 210.32px;
-    height: 68px;
+.headerdashboard .text {
+    font-size: 48px;  
+    font-weight: 500;  
+}
+
+.headerdashboard .red {
+    color: #FF0101   
 }

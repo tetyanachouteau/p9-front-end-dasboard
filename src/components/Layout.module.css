@@ -1,16 +1,15 @@
 body {
     margin: 0;
+    font-family: 'Roboto';
 }
 
 .layout {
-    font-family: 'Montserrat';
     flex-direction: column;
     display: flex;
     height: 100vh;
     max-width: 1440px;
     max-height: 1224px;
     color:#FFFFFF;
-
 }
 
 .contentContainer {
