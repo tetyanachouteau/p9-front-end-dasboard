@@ -1,8 +1,10 @@
 .navigation {
-  width: 994px;
-  height: 24px;
-  margin-top: 36px;
-  margin-left: 355px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-content: center;
+  height: 100%;
 }
 
 .navigation ul {
@@ -11,17 +13,12 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 57px;
-}
-
-.navigation ul li {
-  display: inline;
-  white-space: nowrap;
-  font-family: 'Roboto';
+  justify-content: space-around;
+  width: 100%;
+  font-size: 24px;
 }
 
 .navigation a {
   font-family: 'Roboto';
-  font-size: 16px;
   color: white;
 }
