@@ -5,7 +5,7 @@ import styles from "./SiderLeft.module.css"
 function SiderLeft() {
 
     return (
-        <siderleft className={styles.siderleft}>
+        <div className={styles.siderleft}>
             <div className={styles.iconsAndText}>
                 <div className={styles.icons}>
                     <Link to="/page1">
@@ -23,7 +23,7 @@ function SiderLeft() {
                 </div>
                 <div className={styles.text}>Copyright, SportSee 2020</div>
             </div>
-        </siderleft >
+        </div >
     );
 }
 

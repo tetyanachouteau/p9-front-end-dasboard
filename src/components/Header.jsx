@@ -6,7 +6,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <img src="/LOGO.png" alt="Logo SportSee"></img>
+            <img src="/logo.png" alt="Logo SportSee"></img>
             <Navigation />
         </header>
     );

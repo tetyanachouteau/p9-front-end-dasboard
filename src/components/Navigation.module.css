@@ -21,4 +21,9 @@
 .navigation a {
   font-family: 'Roboto';
   color: white;
+  text-decoration: none;
+}
+
+.navigation .activeLink {
+  text-decoration: underline;
 }

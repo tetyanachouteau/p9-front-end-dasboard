@@ -1,6 +1,6 @@
 // Dashboard.jsx
 import React from 'react';
-import MesuresDashboard from '../components/MesuresDashboard';
+import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
 import Poids1 from '../components/Poids1';
 import Radar2 from '../components/Radar2';
@@ -15,11 +15,11 @@ function Dashboard() {
             <div className={styles['dashboard-middle']}>
                 <div className={styles['group-left']}>
                     <div className={styles['poids-container']}>
-                        <Poids1 className={styles['poids1']} />    
+                        <Poids1 className={styles['poids1']} />
                     </div>
                     <div className={styles['group-bottom']}>
                         <div className={styles['objectifs-container']}>
-                            <Objectifs3 className={styles['objectifs3']} />                 
+                            <Objectifs3 className={styles['objectifs3']} />
                         </div>
                         <div className={styles['radar-container']}>
                             <Radar2 className={styles['radar2']} />
@@ -32,7 +32,10 @@ function Dashboard() {
 
 
                 <div className={styles['dashboard-right']}>
-                    <MesuresDashboard />
+                    <Mesure icon="fat-icon.png" value="1930kCal" label="Calories" />
+                    <Mesure icon="carbs-icon.png" value="155g" label="Proteines" />
+                    <Mesure icon="calories-icon.png" value="290g" label="Glucides" />
+                    <Mesure icon="protein-icon.png" value="50g" label="Lipides" />
                 </div>
             </div>
         </div>
