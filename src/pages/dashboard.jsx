@@ -2,7 +2,7 @@
 import React from 'react';
 import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
-import Poids1 from '../components/Poids1';
+import Activity from '../components/Activity';
 import Radar2 from '../components/Radar2';
 import Objectifs3 from '../components/Objectifs3';
 import KPI4 from '../components/KPI4';
@@ -14,9 +14,7 @@ function Dashboard() {
             <HeaderDashboard />
             <div className={styles['dashboard-middle']}>
                 <div className={styles['group-left']}>
-                    <div className={styles['poids-container']}>
-                        <Poids1 className={styles['poids1']} />
-                    </div>
+                    <Activity className={styles['activity']} />
                     <div className={styles['group-bottom']}>
                         <div className={styles['objectifs-container']}>
                             <Objectifs3 className={styles['objectifs3']} />

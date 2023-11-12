@@ -31,8 +31,9 @@
     align-items: center;
 }
 
-.poids1 {
-    /* Styles pour Poids1 en haut en large */
+.activity {
+    width: 500px;
+    height: 250px;
 }
 
 .poids-text {
