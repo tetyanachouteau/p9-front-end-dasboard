@@ -17,7 +17,7 @@ function Accueil({ data }) {
             </Link>
 
             <Link to={"/dashboard/"} className={styles.profilContainer} >
-            Profil de Césilia ID18 <h2>Titi</h2>
+            <p>Profil de Césilia ID18 <h2>Titi</h2></p>
             </Link>
             
         </div>
