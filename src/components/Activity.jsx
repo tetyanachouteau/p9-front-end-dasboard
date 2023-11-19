@@ -37,8 +37,8 @@ function Activity() {
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 <XAxis tickLine={false} />
                 <YAxis orientation="right" axisLine={false} tickLine={false} />
-                <Tooltip content={<CustomTooltip />} offset={60} position={{ y: 0 }} />
-                <Legend verticalAlign="top" align="right" iconType='circle' height={50} />
+                <Tooltip content={<CustomTooltip />} offset={60} position={{ y: 50 }} />
+                <Legend verticalAlign="top" align="right" iconType='circle' height={100} />
                 <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
                 <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
             </BarChart>
