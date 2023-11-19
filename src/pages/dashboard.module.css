@@ -32,11 +32,6 @@
     align-items: center;
 }
 
-.activity {
-    width: 500px;
-    height: 250px;
-}
-
 .poids-text {
     color: #333;
     /* Couleur du texte */
@@ -56,6 +51,7 @@
 radar-container,
 kpi-container {
     flex: 1;
+    flex-basis: 33%;
     /* Pour répartir l'espace équitablement entre les composants */
 }
 
