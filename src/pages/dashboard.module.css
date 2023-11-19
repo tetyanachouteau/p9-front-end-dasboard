@@ -43,8 +43,9 @@
 
 .group-bottom {
     display: flex;
-    flex-direction: row;
     /* Pour placer les composants de gauche à droite */
+    flex-direction: row;
+    gap:30px
 }
 
 .objectifs-container,
