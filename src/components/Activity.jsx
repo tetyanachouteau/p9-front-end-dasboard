@@ -20,7 +20,7 @@ function Activity() {
     const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
-                <div className={styles.wrapper}>
+                <div className={styles.content}>
                     <p>{payload[0].value}kg</p>
                     <p>{payload[1].value}Kcal</p>
                 </div>
@@ -31,9 +31,9 @@ function Activity() {
     };
 
     return (
-        <ResponsiveContainer width="100%" height={300}>
-            <BarChart data={activity.sessions}>
-                <text x={0} y={20} fill="black" fontWeight="bold">Activité quotidienne</text>
+        <ResponsiveContainer width="100%" height={300} className={styles.responsive}>
+            <BarChart data={activity.sessions} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
+                <text x={30} y={44} fill="black" fontWeight="bold">Activité quotidienne</text>
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 <XAxis tickLine={false} />
                 <YAxis orientation="right" axisLine={false} tickLine={false} />

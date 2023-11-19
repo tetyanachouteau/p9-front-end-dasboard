@@ -1,6 +1,10 @@
 
-.wrapper {
+.content {
     background-color: #E60000;
     color: #FFFFFF;
     padding: 10px;
+}
+
+.responsive {
+    background-color: #FBFBFB;
 }
