@@ -38,10 +38,10 @@ function Dashboard() {
 
 
                 <div className={styles['dashboard-right']}>
-                    <Mesure icon="fat-icon.png" value="1930kCal" label="Calories" />
-                    <Mesure icon="carbs-icon.png" value="155g" label="Proteines" />
-                    <Mesure icon="calories-icon.png" value="290g" label="Glucides" />
-                    <Mesure icon="protein-icon.png" value="50g" label="Lipides" />
+                    <Mesure icon="fat-icon.png" value={mainData.keyData.calorieCount + "kCal"} label="Calories" />
+                    <Mesure icon="carbs-icon.png" value={mainData.keyData.proteinCount + "g"} label="Proteines" />
+                    <Mesure icon="calories-icon.png" value={mainData.keyData.carbohydrateCount + "g"} label="Glucides" />
+                    <Mesure icon="protein-icon.png" value={mainData.keyData.lipidCount + "g"} label="Lipides" />
                 </div>
             </div>
         </div>
