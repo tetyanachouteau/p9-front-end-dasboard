@@ -1,31 +1,48 @@
 
 import React from 'react';
-import { BarChart, Bar, Label, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import data from "../data/data"
+import { BarChart, Bar, Label, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { USER_ACTIVITY } from "../data/data"
+import { useParams } from 'react-router-dom';
+import styles from './Activity.module.css';
 
 function Activity() {
+    let { id } = useParams();
+
+    let activity = USER_ACTIVITY.filter(el => el.userId === Number.parseInt(id))[0]
+    console.log(activity)
+
+    const MaBar = (props) => {
+        const { fill, x, y, width, height } = props;
+
+        return <Rectangle x={x} y={y} fill={fill} width={width} height={height} radius={[4, 4, 0, 0]} />
+    };
+
+    const CustomTooltip = ({ active, payload, content }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className={styles.wrapper}>
+                    <p>{payload[0].value}kg</p>
+                    <p>{payload[1].value}Kcal</p>
+                </div>
+            );
+        }
+
+        return null;
+    };
 
     return (
-        <BarChart
-            width={500}
-            height={300}
-            data={data.USER_ACTIVITY[0].sessions}
-            margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-            }}
-        >
-            <Label value="Activité quotidienne (Poids1)" offset={0} position="insideTopLeft" />
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="day" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="kilogram" label="Poids (kg)" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="calories" label="Calories brûlées (kCal)" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-        </BarChart>
+        <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={activity.sessions}>
+                <Label value="Activité quotidienne" offset={0} position="top" />
+                <CartesianGrid vertical={false} strokeDasharray="3 3" />
+                <XAxis tickLine={false} />
+                <YAxis orientation="right" axisLine={false} tickLine={false} />
+                <Tooltip content={<CustomTooltip />} />
+                <Legend verticalAlign="top" align="right" iconType='circle' height={50} />
+                <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
+                <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
+            </BarChart>
+        </ResponsiveContainer>
     );
 }
 
