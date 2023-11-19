@@ -3,7 +3,7 @@ import React from 'react';
 import { BarChart, Bar, Label, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import data from "../data/data"
 
-function Poids1() {
+function Activity() {
 
     return (
         <BarChart
@@ -29,4 +29,4 @@ function Poids1() {
     );
 }
 
-export default Poids1;
+export default Activity;

@@ -3,6 +3,7 @@ import React from 'react';
 
 import Accueil from "./pages/accueil";
 import Dashboard from "./pages/dashboard";
+import Erreur from "./pages/erreur"
 
 import Layout from './components/Layout';
 
@@ -11,11 +12,11 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />} >
         <Route index element={<Accueil />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="dashboard/:id" element={<Dashboard />} />
+        <Route path="*" element={<Erreur />} />
       </Route>
-      </Routes>
-      );
+    </Routes>
+  );
 }
 
-export default App;
-      
+export default App;    
