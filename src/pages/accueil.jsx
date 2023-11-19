@@ -18,14 +18,6 @@ function Accueil({ data }) {
             <Link to={"/dashboard/18"} className={styles.dashboardButton} >
             <p>Profil de Césilia ID18 <h2>Titi</h2></p>
             </Link>
-
-            <h2>Profil</h2>
-            <Link to={"/profile/12"} className={styles.dashboardButton} >
-            Profil de Karl ID12 <h2>Toto</h2>
-            </Link>
-            <Link to={"/profile/18"} className={styles.dashboardButton} >
-            <p>Profil de Césilia ID18 <h2>Titi</h2></p>
-            </Link>
         </div>
     );
 }
