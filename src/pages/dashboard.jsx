@@ -7,11 +7,19 @@ import Radar2 from '../components/Radar2';
 import Objectifs3 from '../components/Objectifs3';
 import KPI4 from '../components/KPI4';
 import styles from './dashboard.module.css';
+import { useParams } from 'react-router-dom';
+
+import { USER_MAIN_DATA } from '../data/data'
 
 function Dashboard() {
+    let { id } = useParams();
+
+    var mainData = USER_MAIN_DATA.filter(el => el.id === Number.parseInt(id))[0]
+    console.log(mainData)
+
     return (
         <div className={styles['dashboard-container']}>
-            <HeaderDashboard />
+            <HeaderDashboard name={mainData.userInfos.firstName} />
             <div className={styles['dashboard-middle']}>
                 <div className={styles['group-left']}>
                     <Activity className={styles['activity']} />

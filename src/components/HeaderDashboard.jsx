@@ -1,11 +1,10 @@
 import styles from "./HeaderDashboard.module.css"
-//import Navigation from './Navigation';
 import React from 'react';
 
-function HeaderDashboard() {
+function HeaderDashboard({name}) {
     return (
         <div className={styles.headerdashboard}>
-            <p className={styles.text}>Bonjour <span className={styles.red}>Thomas</span></p>
+            <p className={styles.text}>Bonjour <span className={styles.red}>{name}</span></p>
             <p>Félicitation ! Vous avez explosé vos objectifs hier
                 <span role="img" aria-label="coucou">👏</span>
             </p>
