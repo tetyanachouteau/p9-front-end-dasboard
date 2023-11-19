@@ -9,6 +9,8 @@ function KPI() {
 
     let { id } = useParams();
 
+    let day = ["L","M","M","J","V","S","D"];
+
     let sessions = USER_AVERAGE_SESSIONS.filter(el => el.userId === Number.parseInt(id))[0];
 
     const CustomTooltip = ({ active, payload }) => {
@@ -35,7 +37,11 @@ function KPI() {
                 }}
             >
                 <text x={30} y={44} fill="#FFFFFF" fontWeight="bold">Durée moyenne des sessions</text>
-                <XAxis axisLine={false} tickLine={false} dataKey="day" color='#FFFFFF'/>
+                <XAxis axisLine={false} 
+                tickLine={false} 
+                dataKey={(props)=>{ return day[props.day - 1] }} 
+                tick={{ stroke: "#FFFFFF" }}
+                interval="preserveStartEnd"/>
                 <YAxis hide={true} dataKey="sessionLength" />
                 <Tooltip content={<CustomTooltip />} offset={5} />
                 <Line type="monotone" dataKey="sessionLength" 
