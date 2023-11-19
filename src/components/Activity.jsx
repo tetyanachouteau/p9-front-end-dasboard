@@ -17,7 +17,7 @@ function Activity() {
         return <Rectangle x={x} y={y} fill={fill} width={width} height={height} radius={[4, 4, 0, 0]} />
     };
 
-    const CustomTooltip = ({ active, payload, content }) => {
+    const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
             return (
                 <div className={styles.wrapper}>
@@ -37,7 +37,7 @@ function Activity() {
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 <XAxis tickLine={false} />
                 <YAxis orientation="right" axisLine={false} tickLine={false} />
-                <Tooltip content={<CustomTooltip />} />
+                <Tooltip content={<CustomTooltip />} offset={60} position={{y:0}}/>
                 <Legend verticalAlign="top" align="right" iconType='circle' height={50} />
                 <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
                 <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
