@@ -6,6 +6,7 @@ import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 import { USER_ACTIVITY } from "../data/data"
 import { useParams } from 'react-router-dom';
 import styles from './Activity.module.css';
+//https://recharts.org/en-US/examples/SimpleBarChart
 
 // Ce composant rend un graphique BarChart réactif avec des fonctionnalités personnalisées.
 
@@ -54,7 +55,7 @@ function Activity() {
         <ResponsiveContainer width="100%" height={300} className={styles.responsive}>
              {/* BarChart avec différentes propriétés */}
             <BarChart data={activity.sessions} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
-                {/* Titre personnalisé */}
+                {/* Titre personnalisé en svg et non en html : https://github.com/recharts/recharts/issues/478 */}
                 <text x={30} y={44} fill="black" fontWeight="bold">Activité quotidienne</text>
                 {/* Grille cartésienne */}
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />

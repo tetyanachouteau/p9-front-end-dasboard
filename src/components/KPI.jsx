@@ -3,6 +3,7 @@ import styles from "./KPI.module.css"
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from "../data/data"
 import { useParams } from 'react-router-dom';
+//https://recharts.org/en-US/examples/TinyLineChart
 
 function KPI() {
     // Récupération du paramètre "id" depuis l'URL à l'aide de useParams
