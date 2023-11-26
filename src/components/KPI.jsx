@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./KPI.module.css"
-import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { USER_AVERAGE_SESSIONS } from "../data/data"
 import { useParams } from 'react-router-dom';
 //https://recharts.org/en-US/examples/TinyLineChart

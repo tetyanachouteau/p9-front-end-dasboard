@@ -4,7 +4,7 @@ import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
 import Activity from '../components/Activity';
 import Radar2 from '../components/Radar2';
-import Objectifs3 from '../components/Objectifs3';
+import Objectifs from '../components/Objectifs';
 import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
 import { useParams, Navigate } from 'react-router-dom';
@@ -25,7 +25,7 @@ function Dashboard() {
                         <Activity />
                         <div className={styles['group-bottom']}>
                             <KPI />
-                            <Objectifs3 className={styles['objectifs3']} />
+                            <Objectifs />
                             <Radar2 className={styles['radar2']} />
                         </div>
                     </div>
