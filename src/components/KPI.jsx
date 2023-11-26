@@ -61,7 +61,7 @@ function KPI() {
 
                 {/* Ligne représentant la durée moyenne des sessions */}
                 <Line
-                    type="monotone"
+                    type="natural"
                     dataKey="sessionLength"
                     stroke="#FFF"
                     dot={false}
