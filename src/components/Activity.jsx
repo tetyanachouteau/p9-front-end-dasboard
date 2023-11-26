@@ -41,7 +41,8 @@ function Activity() {
             return (
                 <div className={styles.content}>
                     <p>{payload[0].value}kg</p>
-                    <p>{payload[1].value}Kcal</p>
+                    {/* les données sont /4 donc on les remultiples */}
+                    <p>{payload[1].value * 4}Kcal</p>
                 </div>
             );
         }
@@ -49,27 +50,37 @@ function Activity() {
         return null;
     };
 
+    const customTickNameX = (data) => {
+        // fonction ajouter + 1 à l'index
+        return data + 1;
+    };
+
+    const customDataCal = (data) => {
+        // On divise par 4 pour que ça rentre dans le graphique
+        return data.calories / 4;
+    };
+
     return (
-          // Utilisation du conteneur réactif pour rendre le graphique adaptatif
-         // Il enveloppe le graphique et assure qu'il s'ajuste de manière réactive à la largeur et à la hauteur de son conteneur.
+        // Utilisation du conteneur réactif pour rendre le graphique adaptatif
+        // Il enveloppe le graphique et assure qu'il s'ajuste de manière réactive à la largeur et à la hauteur de son conteneur.
         <ResponsiveContainer width="100%" height={300} className={styles.responsive}>
-             {/* BarChart avec différentes propriétés */}
+            {/* BarChart avec différentes propriétés */}
             <BarChart data={activity.sessions} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
                 {/* Titre personnalisé en svg et non en html : https://github.com/recharts/recharts/issues/478 */}
                 <text x={30} y={44} fill="black" fontWeight="bold">Activité quotidienne</text>
                 {/* Grille cartésienne */}
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
-                 {/* Axe X sans lignes de repère */}
-                <XAxis tickLine={false} />
-                 {/* Axe Y à droite sans ligne d'axe ni lignes de repère */}
-                <YAxis orientation="right" axisLine={false} tickLine={false} />
+                {/* Axe X sans lignes de repère et les données sont issues de la fonction customDataDate (plus haut) */}
+                <XAxis tickLine={false} tickFormatter={customTickNameX} />
+                {/* Axe Y à droite sans ligne d'axe ni lignes de repère */}
+                <YAxis orientation="right" axisLine={false} tickLine={false} dataKey="kilogram" />
                 {/* Tooltip personnalisé avec contenu provenant du composant CustomTooltip */}
                 <Tooltip content={<CustomTooltip />} offset={60} position={{ y: 50 }} />
                 {/* Légende avec alignement vertical en haut et à droite */}
                 <Legend verticalAlign="top" align="right" iconType='circle' height={100} />
                 {/* Barres avec des couleurs et des formes personnalisées */}
                 <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
-                <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
+                <Bar dataKey={customDataCal} name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
             </BarChart>
         </ResponsiveContainer>
     );
@@ -80,5 +91,5 @@ export default Activity;
 //La bibliothèque Recharts est utilisée pour créer des graphiques dans les applications React.
 // Elle offre une variété de composants pour créer différents types de graphiques,
 // tels que les graphiques à barres, les graphiques linéaires, les graphiques à secteurs, etc.
-//Voici une brève explication de chaque composant Recharts qu'on trouve 
+//Voici une brève explication de chaque composant Recharts qu'on trouve
 //dans le composant que nous avons discuté précédemment : ResponsiveContainer... 
