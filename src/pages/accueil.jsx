@@ -12,10 +12,10 @@ function Accueil({ data }) {
         <div className={styles.profilContainer}>
             <h1>SportSee - vers Dashboard</h1>
             <Link to={"/dashboard/12"} className={styles.dashboardButton} >
-            <p>Profil de Karl ID12 <h2>Toto</h2></p>
+            <p>Profil de Karl ID12 <h2>Karl</h2></p>
             </Link>
             <Link to={"/dashboard/18"} className={styles.dashboardButton} >
-            <p>Profil de Césilia ID18 <h2>Titi</h2></p>
+            <p>Profil de Césilia ID18 <h2>Césilia</h2></p>
             </Link>
         </div>
     );
