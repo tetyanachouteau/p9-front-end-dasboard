@@ -15,7 +15,6 @@ function Activity() {
     let { id } = useParams();
     // Filtrage des données d'activité pour l'utilisateur spécifique
     let activity = USER_ACTIVITY.filter(el => el.userId === Number.parseInt(id))[0];
-    console.log(activity);
 
     // Composant personnalisé pour définir la forme des barres dans le graphique
     const MaBar = (props) => {

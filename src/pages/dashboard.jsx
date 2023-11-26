@@ -3,8 +3,8 @@ import React from 'react';
 import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
 import Activity from '../components/Activity';
-import Radar2 from '../components/Radar2';
-import Objectifs from '../components/Objectifs';
+import Objectif from '../components/Objectif';
+import Radar from '../components/Radar';
 import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
 import { useParams, Navigate } from 'react-router-dom';
@@ -15,7 +15,7 @@ function Dashboard() {
     let { id } = useParams();
 
     var mainData = USER_MAIN_DATA.filter(el => el.id === Number.parseInt(id))[0]
-    console.log(mainData)
+    
     if (mainData) {
         return (
             <div className={styles['dashboard-container']}>
@@ -25,8 +25,8 @@ function Dashboard() {
                         <Activity />
                         <div className={styles['group-bottom']}>
                             <KPI />
-                            <Objectifs />
-                            <Radar2 className={styles['radar2']} />
+                            <Radar />
+                            <Objectif score={mainData.todayScore}/>
                         </div>
                     </div>
 

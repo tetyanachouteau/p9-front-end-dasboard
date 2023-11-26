@@ -19,7 +19,6 @@ function KPI() {
     const CustomTooltip = (data) => {
         let { payload, active, coordinate, viewBox } = data;
         if (active && payload && payload.length) {
-            console.log(data)
             return (
                 <div className={styles.background} style={{ width: (viewBox.width - coordinate.x) + "px", height: '265px', marginTop: '-50px' }}>
                     <div className={styles.content} style={{ top: coordinate.y + "px" }}>
@@ -34,9 +33,6 @@ function KPI() {
 
     // methode qui permet de personnalisé l'affichage des labels sur l'axe X
     const CustomXAxis = ({ x, y, payload }) => {
-
-        console.log(payload)
-
         // si on est sur les bords on ajoute un offset 
         let offset = payload.value === 1 ? 10 : payload.value === 7 ? -10 : 0;
 

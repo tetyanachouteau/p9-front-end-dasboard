@@ -1,11 +1,11 @@
 
 import React from 'react';
-import styles from "./Objectifs.module.css"
+import styles from "./Radar.module.css"
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
 import { USER_PERFORMANCE } from "../data/data"
 import { useParams } from 'react-router-dom';
 
-function Objectifs() {
+function RadarComp() {
 
     // Récupération du paramètre "id" depuis l'URL à l'aide de useParams
     let { id } = useParams();
@@ -32,4 +32,4 @@ function Objectifs() {
     );
 }
 
-export default Objectifs;
+export default RadarComp;
