@@ -35,19 +35,25 @@ function Activity() {
     //Vous pouvez ajuster cette fonction en fonction des informations que vous souhaitez afficher dans le Tooltip lors du survol des barres dans votre graphique.
 
 
-    const CustomTooltip = ({ active, payload }) => {
-        if (active && payload && payload.length) {
-            return (
-                <div className={styles.content}>
-                    <p>{payload[0].value}kg</p>
-                    {/* les données sont /4 donc on les remultiples */}
-                    <p>{payload[1].value * 4}Kcal</p>
-                </div>
-            );
-        }
+    // Composant personnalisé pour définir le contenu du Tooltip
+const CustomTooltip = ({ active, payload }) => {
+    // Vérifier si le Tooltip est actif et si des données sont disponibles
+    if (active && payload && payload.length) {
+        return (
+            // Conteneur du Tooltip avec la classe CSS styles.content
+            <div className={styles.content}>
+                {/* Affichage du poids */}
+                <p>{payload[0].value}kg</p>
+                {/* Les données sont divisées par 4, donc on les remultiplie */}
+                <p>{payload[1].value * 4}Kcal</p>
+            </div>
+        );
+    }
 
-        return null;
-    };
+    // Retourner null si le Tooltip n'est pas actif ou s'il n'y a pas de données
+    return null;
+};
+
 
     const customTickNameX = (data) => {
         // fonction ajouter + 1 à l'index
