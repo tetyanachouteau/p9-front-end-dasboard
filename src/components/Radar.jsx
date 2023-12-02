@@ -15,10 +15,17 @@ function RadarComp() {
     // Extraire les données de performance spécifiques pour le graphique radar
     let data = perf.data;
 
+    let translate = {'cardio': 'Cardio',
+    'energy': 'Energie',
+    'endurance': 'Endurance',
+    'strength': 'Force',
+    'speed': 'Vitesse',
+    'intensity': 'Intensité'}
+
     // Fonction personnalisée pour le formatage des noms d'axe X
     const customTickNameX = (data) => {
         // Récupérer le texte qui correspond à l'ID de "kind" dans les données de performance
-        return perf.kind[data];
+        return translate[perf.kind[data]];
     };
 
 
