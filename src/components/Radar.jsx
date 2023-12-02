@@ -13,7 +13,7 @@ function RadarComp() {
     let perf = USER_PERFORMANCE.filter(el => el.userId === Number.parseInt(id))[0];
 
     // Extraire les données de performance spécifiques pour le graphique radar
-    let data = perf.data;
+    let data = perf.data.sort((a,b) => {return b.kind-a.kind});
 
     let translate = {'cardio': 'Cardio',
     'energy': 'Energie',
