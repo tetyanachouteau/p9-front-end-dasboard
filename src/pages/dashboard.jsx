@@ -26,7 +26,8 @@ function Dashboard() {
                         <div className={styles['group-bottom']}>
                             <KPI />
                             <Radar />
-                            <Objectif score={mainData.todayScore}/>
+                            {/* Le score est soit dans todayScore soit dans score */}
+                            <Objectif score={mainData.todayScore ? mainData.todayScore : mainData.score}/>
                         </div>
                     </div>
 
