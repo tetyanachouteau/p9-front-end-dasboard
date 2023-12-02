@@ -45,7 +45,7 @@ const CustomTooltip = ({ active, payload }) => {
                 {/* Affichage du poids */}
                 <p>{payload[0].value}kg</p>
                 {/* Les données sont divisées par 4, donc on les remultiplie */}
-                <p>{payload[1].value * 4}Kcal</p>
+                <p>{payload[1].value}Kcal</p>
             </div>
         );
     }
@@ -60,11 +60,6 @@ const CustomTooltip = ({ active, payload }) => {
         return data + 1;
     };
 
-    const customDataCal = (data) => {
-        // On divise par 4 pour que ça rentre dans le graphique
-        return data.calories / 4;
-    };
-
     return (
         // Utilisation du conteneur réactif pour rendre le graphique adaptatif
         // Il enveloppe le graphique et assure qu'il s'ajuste de manière réactive à la largeur et à la hauteur de son conteneur.
@@ -77,15 +72,15 @@ const CustomTooltip = ({ active, payload }) => {
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 {/* Axe X sans lignes de repère et les données sont issues de la fonction customDataDate (plus haut) */}
                 <XAxis tickLine={false} tickFormatter={customTickNameX} />
-                {/* Axe Y à droite sans ligne d'axe ni lignes de repère */}
-                <YAxis orientation="right" axisLine={false} tickLine={false} dataKey="kilogram" />
+                {/* Axe Y à droite sans ligne d'axe ni lignes de repère, data +1 et -1 pour max min, data key =kg */}
+                <YAxis orientation="right" axisLine={false} tickLine={false} dataKey="kilogram" domain={[0,dataMax => (dataMax * 4 )]} />
                 {/* Tooltip personnalisé avec contenu provenant du composant CustomTooltip */}
                 <Tooltip content={<CustomTooltip />} offset={60} position={{ y: 50 }} />
                 {/* Légende avec alignement vertical en haut et à droite */}
                 <Legend verticalAlign="top" align="right" iconType='circle' height={100} />
                 {/* Barres avec des couleurs et des formes personnalisées */}
                 <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
-                <Bar dataKey={customDataCal} name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
+                <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
             </BarChart>
         </ResponsiveContainer>
     );
