@@ -36,7 +36,7 @@ return (
     // Conteneur réactif pour le graphique (s'adapte à la largeur et à la hauteur de son parent)
     <ResponsiveContainer width="100%" height={265} className={styles.responsive}>
         {/* RadarChart avec Recharts */}
-        <RadarChart data={data}>
+        <RadarChart data={data} outerRadius="45%">
             {/* Grille polaire pour le graphique radar */}
             <PolarGrid />
             {/* Axe des angles polaires (axe X) */}

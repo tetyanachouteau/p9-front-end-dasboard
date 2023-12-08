@@ -80,7 +80,8 @@ return (
             }}
         >
             {/* Titre personnalisé au-dessus du graphique */}
-            <text x={20} y={30} fill="#FFFFFF" fontWeight="bold">Durée moyenne des sessions</text>
+            <text x={20} y={30} fill="#FFFFFF" fontWeight="bold">Durée moyenne des</text>
+            <text x={20} y={50} fill="#FFFFFF" fontWeight="bold">sessions</text>
 
             {/* Axe X personnalisé avec les jours de la semaine */}
             <XAxis
