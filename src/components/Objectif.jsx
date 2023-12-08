@@ -38,7 +38,7 @@ function Objectif({score}) {
                     cornerRadius={5}
                     dataKey="value"
                 />
-                <text x="44%" y={112} fill="black" fontWeight="bold">{score*100}%</text>
+                <text x="44%" y={112} fill="black" fontWeight="bold">{Math.floor(score*100)}%</text>
                 <text x="42%" y={132} fill="#AAA">de votre</text>
                 <text x="42%" y={152} fill="#AAA">objectif</text>
             </RadialBarChart>

@@ -36,23 +36,23 @@ function Activity() {
 
 
     // Composant personnalisé pour définir le contenu du Tooltip
-const CustomTooltip = ({ active, payload }) => {
-    // Vérifier si le Tooltip est actif et si des données sont disponibles
-    if (active && payload && payload.length) {
-        return (
-            // Conteneur du Tooltip avec la classe CSS styles.content
-            <div className={styles.content}>
-                {/* Affichage du poids */}
-                <p>{payload[0].value}kg</p>
-                {/* Les données sont divisées par 4, donc on les remultiplie */}
-                <p>{payload[1].value}Kcal</p>
-            </div>
-        );
-    }
+    const CustomTooltip = ({ active, payload }) => {
+        // Vérifier si le Tooltip est actif et si des données sont disponibles
+        if (active && payload && payload.length) {
+            return (
+                // Conteneur du Tooltip avec la classe CSS styles.content
+                <div className={styles.content}>
+                    {/* Affichage du poids */}
+                    <p>{payload[0].value}kg</p>
+                    {/* Les données sont divisées par 4, donc on les remultiplie */}
+                    <p>{payload[1].value}Kcal</p>
+                </div>
+            );
+        }
 
-    // Retourner null si le Tooltip n'est pas actif ou s'il n'y a pas de données
-    return null;
-};
+        // Retourner null si le Tooltip n'est pas actif ou s'il n'y a pas de données
+        return null;
+    };
 
 
     const customTickNameX = (data) => {
@@ -72,15 +72,35 @@ const CustomTooltip = ({ active, payload }) => {
                 <CartesianGrid vertical={false} strokeDasharray="3 3" />
                 {/* Axe X sans lignes de repère et les données sont issues de la fonction customDataDate (plus haut) */}
                 <XAxis tickLine={false} tickFormatter={customTickNameX} />
+
                 {/* Axe Y à droite sans ligne d'axe ni lignes de repère, data +1 et -1 pour max min, data key =kg */}
-                <YAxis orientation="right" axisLine={false} tickLine={false} dataKey="kilogram" domain={[0,dataMax => (dataMax * 4 )]} />
+
+                <YAxis
+                    yAxisId="left"
+                    hide={false}
+                />
+
+
+                <YAxis
+                    yAxisId="right"
+                    orientation="right"
+                    axisLine={false}
+                    tickLine={false}
+                    dataKey="kilogram"
+                    domain={["dataMin-1", "dataMax+1"]}
+                    allowDecimals={false}
+                />
+
                 {/* Tooltip personnalisé avec contenu provenant du composant CustomTooltip */}
                 <Tooltip content={<CustomTooltip />} offset={60} position={{ y: 50 }} />
                 {/* Légende avec alignement vertical en haut et à droite */}
                 <Legend verticalAlign="top" align="right" iconType='circle' height={100} />
-                {/* Barres avec des couleurs et des formes personnalisées */}
-                <Bar dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
-                <Bar dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
+                {/* Barres avec des couleurs et des formes personnalisées
+                
+                Reduire 
+                */}
+                <Bar yAxisId="right" dataKey="kilogram" name="Poids (kg)" fill="#282D30" barSize={8} shape={<MaBar />} />
+                <Bar yAxisId="left" dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
             </BarChart>
         </ResponsiveContainer>
     );
