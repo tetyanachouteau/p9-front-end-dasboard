@@ -63,7 +63,7 @@ function Activity() {
     return (
         // Utilisation du conteneur réactif pour rendre le graphique adaptatif
         // Il enveloppe le graphique et assure qu'il s'ajuste de manière réactive à la largeur et à la hauteur de son conteneur.
-        <ResponsiveContainer width="100%" height={300} className={styles.responsive}>
+        <ResponsiveContainer width="100%" height={300} minWidth={550} className={styles.responsive}>
             {/* BarChart avec différentes propriétés */}
             <BarChart data={activity.sessions} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
                 {/* Titre personnalisé en svg et non en html : https://github.com/recharts/recharts/issues/478 */}
