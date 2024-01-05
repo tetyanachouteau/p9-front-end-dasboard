@@ -9,17 +9,18 @@ import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
 import { useParams, Navigate } from 'react-router-dom';
 
-import { USER_MAIN_DATA } from '../data/data'
-
+//export default)
+import getProfil from '../services/profilRequest'
+//getPr()
 function Dashboard() {
     let { id } = useParams();
-
-    var mainData = USER_MAIN_DATA.filter(el => el.id === Number.parseInt(id))[0]
-    
-    if (mainData) {
+    const profil = getProfil(id);
+    console.log(profil);
+//profilmodel ou tout est dans une class profil.lastname... main disparé mais profil non
+    if (profil) {
         return (
             <div className={styles['dashboard-container']}>
-                <HeaderDashboard name={mainData.userInfos.firstName} />
+                <HeaderDashboard name={profil.firstName} />
                 <div className={styles['dashboard-middle']}>
                     <div className={styles['group-left']}>
                         <Activity />
@@ -27,16 +28,16 @@ function Dashboard() {
                             <KPI />
                             <Radar />
                             {/* Le score est soit dans todayScore soit dans score */}
-                            <Objectif score={mainData.todayScore ? mainData.todayScore : mainData.score}/>
+                            <Objectif score={profil.score} />
                         </div>
                     </div>
 
 
                     <div className={styles['dashboard-right']}>
-                        <Mesure icon="fat-icon.png" value={mainData.keyData.calorieCount + "kCal"} label="Calories" />
-                        <Mesure icon="carbs-icon.png" value={mainData.keyData.proteinCount + "g"} label="Proteines" />
-                        <Mesure icon="calories-icon.png" value={mainData.keyData.carbohydrateCount + "g"} label="Glucides" />
-                        <Mesure icon="protein-icon.png" value={mainData.keyData.lipidCount + "g"} label="Lipides" />
+                        <Mesure icon="fat-icon.png" value={profil.calorie + "kCal"} label="Calories" />
+                        <Mesure icon="carbs-icon.png" value={profil.proteine + "g"} label="Proteines" />
+                        <Mesure icon="calories-icon.png" value={profil.glucide + "g"} label="Glucides" />
+                        <Mesure icon="protein-icon.png" value={profil.lipide + "g"} label="Lipides" />
                     </div>
                 </div>
             </div>
