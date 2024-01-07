@@ -26,19 +26,37 @@ const getUserInfos = (id) => {
 
 function getActivities(id) {
 
-    const activities = USER_ACTIVITY.find(el => el.userId === Number.parseInt(id, 10));
+    let activities;
+    if (mockData) {
+        activities = USER_ACTIVITY.find(el => el.userId === Number.parseInt(id, 10));
+    } else {
+        //point pour chercher info user avec axios ou fetch
+        //continuer pareil + appele au backoffice fauls backend
+    }
     console.log(activities);
 
     return activities;
 }
 
 function getAverageSessions(id) {
-    const averageSessions = USER_AVERAGE_SESSIONS.find(el => el.userId === Number.parseInt(id));
+    let averageSessions;
+    if (mockData) {
+        averageSessions = USER_AVERAGE_SESSIONS.find(el => el.userId === Number.parseInt(id));
+    } else {
+        //point pour chercher info user avec axios ou fetch
+        //continuer pareil + appele au backoffice fauls backend
+    }
     return averageSessions;
 }
 
 function getPerfomances(id) {
-    const perfomances = USER_PERFORMANCE.find(el => el.userId === Number.parseInt(id));
+    let perfomances;
+    if (mockData) {
+        perfomances = USER_PERFORMANCE.find(el => el.userId === Number.parseInt(id));
+    } else {
+        //point pour chercher info user avec axios ou fetch
+        //continuer pareil + appele au backoffice fauls backend
+    }
     return perfomances;
 }
 
