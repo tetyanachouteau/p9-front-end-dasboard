@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
 import Activity from '../components/Activity';
@@ -14,8 +14,12 @@ import getProfil from '../services/profilRequest'
 //getPr()
 function Dashboard() {
     let { id } = useParams();
-    const profil = getProfil(id);
-    console.log(profil);
+
+    const [profil, setProfil] = useState(null);
+    getProfil(id).then( data => setProfil(data));
+
+    // const profil = getProfil(id);
+
 //profilmodel ou tout est dans une class profil.lastname... main disparé mais profil non
     if (profil) {
         return (
