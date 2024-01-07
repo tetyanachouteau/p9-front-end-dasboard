@@ -1,7 +1,7 @@
 //indité=modele vers data (peu importe d'ou vient la date)
 class ProfilModel {
     //méthode de constructeaur fname, last name, age, tous mes scores, 3 kall glus, lypydes (chaque fois)
-    constructor(infos) {
+    constructor(infos, activities, averageSessions, perfomances) {
         this.id = infos.id;
         this.firstName = infos.userInfos.firstName;
         this.lastName = infos.userInfos.lastName;
@@ -11,6 +11,9 @@ class ProfilModel {
         this.proteine = infos.keyData.proteinCount;
         this.glucide = infos.keyData.carbohydrateCount;
         this.lipide = infos.keyData.lipidCount;
+        this.activities = activities;
+        this.averageSessions = averageSessions;
+        this.perfomances = perfomances;
     }
 }
 
