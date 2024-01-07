@@ -1,5 +1,5 @@
 // Dashboard.jsx
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Mesure from '../components/Mesure';
 import HeaderDashboard from '../components/HeaderDashboard';
 import Activity from '../components/Activity';
@@ -7,7 +7,7 @@ import Objectif from '../components/Objectif';
 import Radar from '../components/Radar';
 import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
-import { useParams, Navigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 //export default)
 import getProfil from '../services/profilRequest'
@@ -16,8 +16,12 @@ function Dashboard() {
     let { id } = useParams();
 
     const [profil, setProfil] = useState(null);
-    getProfil(id).then( data => setProfil(data));
 
+    useEffect(() => {
+        getProfil(id).then( data => setProfil(data));
+    }
+    , [id]);
+    
     // const profil = getProfil(id);
 
 //profilmodel ou tout est dans une class profil.lastname... main disparé mais profil non
@@ -46,8 +50,8 @@ function Dashboard() {
                 </div>
             </div>
         );
-    } else {
-        return <Navigate to="/erreur" />
+    // } else {
+    //     return <Navigate to="/erreur" />
     }
 }
 export default Dashboard;
