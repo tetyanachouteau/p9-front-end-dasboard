@@ -2,16 +2,8 @@
 import React from 'react';
 import styles from "./Radar.module.css"
 import { ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
-import { USER_PERFORMANCE } from "../data/data"
-import { useParams } from 'react-router-dom';
 
-function RadarComp() {
-    // Récupération du paramètre "id" depuis l'URL à l'aide de useParams
-    let { id } = useParams();
-
-    // Filtrer les données de performance pour l'utilisateur spécifié par l'ID
-    let perf = USER_PERFORMANCE.filter(el => el.userId === Number.parseInt(id))[0];
-
+function RadarComp({perf}) {
     // Extraire les données de performance spécifiques pour le graphique radar
     let data = perf.data.sort((a,b) => {return b.kind-a.kind});
 

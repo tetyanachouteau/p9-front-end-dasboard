@@ -22,7 +22,7 @@ const getUserInfos = async (id) => {
         infos = infos.data;
     }
 
-    console.log(infos);
+    console.log("infos: " + JSON.stringify(infos));
 
     return infos;
 }
@@ -37,7 +37,7 @@ async function getActivities(id) {
         activities = activities.data;
     }
 
-    console.log(activities);
+    console.log("activities: " + JSON.stringify(activities));
 
     return activities;
 }
@@ -52,7 +52,7 @@ async function getAverageSessions(id) {
         averageSessions = averageSessions.data;
     }
 
-    console.log(averageSessions);
+    console.log("averageSessions: " + JSON.stringify(averageSessions));
 
     return averageSessions;
 }
@@ -67,7 +67,7 @@ async function getPerfomances(id) {
         perfomances = perfomances.data;
     }
 
-    console.log(perfomances);
+    console.log("perfomances: " + JSON.stringify(perfomances));
 
     return perfomances;
 }
@@ -76,14 +76,12 @@ async function getProfil(id) {
     //find sur main date pour une bonne prsonne
     //si mock data ou api, découpage avec autres fonctions pour simplifier
     const infos = await getUserInfos(id);
-    console.log(infos);
     //méthode de constructeur
     // s'il existe on l'appelle ? rare destructeur s'il y a un
     const activities = await getActivities(id);
     const averageSessions = await getAverageSessions(id);
     const perfomances = await getPerfomances(id);
-    console.log(activities, averageSessions, perfomances);
-    return new ProfilModel(infos, activities.sessions, averageSessions.sessions, perfomances.data);
+    return new ProfilModel(infos, activities.sessions, averageSessions.sessions, perfomances);
 }
 
 export default getProfil;

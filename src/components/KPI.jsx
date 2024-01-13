@@ -1,19 +1,11 @@
 import React from 'react';
 import styles from "./KPI.module.css"
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
-import { USER_AVERAGE_SESSIONS } from "../data/data"
-import { useParams } from 'react-router-dom';
 //https://recharts.org/en-US/examples/TinyLineChart
 
-function KPI() {
-    // Récupération du paramètre "id" depuis l'URL à l'aide de useParams
-    let { id } = useParams();
-
+function KPI({sessions}) {
     // Jours de la semaine pour l'axe X du graphique
     let day = ["L", "M", "M", "J", "V", "S", "D"];
-
-    // Filtrage des données de sessions moyennes pour l'utilisateur spécifique
-    let sessions = USER_AVERAGE_SESSIONS.filter(el => el.userId === Number.parseInt(id))[0];
 
     // Composant personnalisé pour définir le contenu du Tooltip
 const CustomTooltip = (data) => {
@@ -71,7 +63,7 @@ return (
     <ResponsiveContainer width="100%" height={265} className={styles.responsive}>
         {/* LineChart avec différentes propriétés */}
         <LineChart
-            data={sessions.sessions}  // Données pour le graphique
+            data={sessions}  // Données pour le graphique
             margin={{
                 top: 50,
                 right: 0,

@@ -15,7 +15,7 @@ function Accueil({ data }) {
             <p>Profil de Karl ID12</p><h2>Karl</h2>
             </Link>
             <Link to={"/dashboard/18"} className={styles.dashboardButton} >
-            <p>Profil de Césilia ID18</p><h2>Césilia</h2>
+            <p>Profil de Cécilia ID18</p><h2>Cécilia</h2>
             </Link>
         </div>
     );

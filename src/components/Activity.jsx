@@ -3,19 +3,12 @@ import React from 'react';
 // Importer votre composant Tooltip personnalisé
 // Importer votre composant de forme de barre personnalisé
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { USER_ACTIVITY } from "../data/data"
-import { useParams } from 'react-router-dom';
 import styles from './Activity.module.css';
 //https://recharts.org/en-US/examples/SimpleBarChart
 
 // Ce composant rend un graphique BarChart réactif avec des fonctionnalités personnalisées.
 
-function Activity() {
-    // Récupération du paramètre "id" depuis l'URL à l'aide de useParams
-    let { id } = useParams();
-    // Filtrage des données d'activité pour l'utilisateur spécifique
-    let activity = USER_ACTIVITY.filter(el => el.userId === Number.parseInt(id))[0];
-
+function Activity({activity}) {
     // Composant personnalisé pour définir la forme des barres dans le graphique
     const MaBar = (props) => {
         const { fill, x, y, width, height } = props;
@@ -63,9 +56,10 @@ function Activity() {
     return (
         // Utilisation du conteneur réactif pour rendre le graphique adaptatif
         // Il enveloppe le graphique et assure qu'il s'ajuste de manière réactive à la largeur et à la hauteur de son conteneur.
+        <div>
         <ResponsiveContainer width="100%" height={300} minWidth={550} className={styles.responsive}>
             {/* BarChart avec différentes propriétés */}
-            <BarChart data={activity.sessions} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
+            <BarChart data={activity} margin={{ top: 30, right: 30, left: 30, bottom: 30 }}>
                 {/* Titre personnalisé en svg et non en html : https://github.com/recharts/recharts/issues/478 */}
                 <text x={30} y={44} fill="black" fontWeight="bold">Activité quotidienne</text>
                 {/* Grille cartésienne */}
@@ -103,6 +97,7 @@ function Activity() {
                 <Bar yAxisId="left" dataKey="calories" name="Calories brûlées (kCal)" fill="#E60000" barSize={8} shape={<MaBar />} />
             </BarChart>
         </ResponsiveContainer>
+        </div>
     );
 }
 

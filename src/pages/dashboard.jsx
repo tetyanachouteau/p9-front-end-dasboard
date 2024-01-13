@@ -7,34 +7,42 @@ import Objectif from '../components/Objectif';
 import Radar from '../components/Radar';
 import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 //export default)
 import getProfil from '../services/profilRequest'
 //getPr()
 function Dashboard() {
     let { id } = useParams();
-
+    const navigate = useNavigate();
     const [profil, setProfil] = useState(null);
 
     useEffect(() => {
-        getProfil(id).then( data => setProfil(data));
+        const fetchData = async () => {
+            try {
+                const profilData = await getProfil(id);
+                setProfil(profilData);
+            } catch (erreur) {
+                navigate("/erreur");
+            }
+        }
+        fetchData();
     }
-    , [id]);
-    
+        , [id]);
+
     // const profil = getProfil(id);
 
-//profilmodel ou tout est dans une class profil.lastname... main disparé mais profil non
+    //profilmodel ou tout est dans une class profil.lastname... main disparé mais profil non
     if (profil) {
         return (
             <div className={styles['dashboard-container']}>
                 <HeaderDashboard name={profil.firstName} />
                 <div className={styles['dashboard-middle']}>
                     <div className={styles['group-left']}>
-                        <Activity />
+                        <Activity activity={profil.activities} />
                         <div className={styles['group-bottom']}>
-                            <KPI />
-                            <Radar />
+                            <KPI sessions={profil.averageSessions} />
+                            <Radar perf={profil.perfomances} />
                             {/* Le score est soit dans todayScore soit dans score */}
                             <Objectif score={profil.score} />
                         </div>
@@ -50,8 +58,8 @@ function Dashboard() {
                 </div>
             </div>
         );
-    // } else {
-    //     return <Navigate to="/erreur" />
+        // } else {
+        //     return <Navigate to="/erreur" />
     }
 }
 export default Dashboard;
