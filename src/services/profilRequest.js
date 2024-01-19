@@ -13,7 +13,7 @@ import {
     USER_PERFORMANCE
 } from '../data/data';
 
-// Variable pour activer ou désactiver l'utilisation des données de simulation (mockData)
+// Variable pour activer ou désactiver l'utilisation des données de simulation (mockData)§§§§§§
 const mockData = false;
 
 // Fonction fléchée pour récupérer les informations de l'utilisateur en fonction de l'ID

@@ -10,6 +10,7 @@ import Radar from '../components/Radar';
 import KPI from '../components/KPI';
 import styles from './dashboard.module.css';
 import { useParams, useNavigate } from 'react-router-dom';
+import Navigation from '../components/Navigation';
 
 // Import de la fonction getProfil depuis le fichier de services profilRequest
 import getProfil from '../services/profilRequest';
@@ -42,7 +43,7 @@ function Dashboard() {
 
         // Appel de la fonction fetchData
         fetchData();
-    }, [id]); // Dépendance à l'ID pour que l'effet se déclenche à chaque changement d'ID
+    }, [id, navigate]); // Dépendance à l'ID pour que l'effet se déclenche à chaque changement d'ID
 
     // Vérification si les données du profil existent
     if (profil) {
@@ -78,7 +79,7 @@ function Dashboard() {
         );
     } else {
         // Redirection vers la page d'erreur si les données du profil n'existent pas encore
-        return <Navigate to="/erreur" />
+        return <Navigation to="/erreur" />
     }
 }
 
