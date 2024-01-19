@@ -56,12 +56,6 @@ kpi-container {
     /* Pour répartir l'espace équitablement entre les composants */
 }
 
-.objectifs3,
-radar2,
-kpi4 {
-    /* Styles pour chaque composant (Objectifs3, Radar2, KPI4) */
-}
-
 .objectifs-text,
 radar-text,
 kpi-text {
