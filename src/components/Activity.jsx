@@ -71,7 +71,7 @@ function Activity({activity}) {
 
                 <YAxis
                     yAxisId="left"
-                    hide={false}
+                    hide={true}
                 />
 
 
